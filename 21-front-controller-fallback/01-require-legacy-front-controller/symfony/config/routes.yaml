@@ -1,0 +1,3 @@
+index:
+    path: /courses
+    controller: App\Controller\CourseListGetController
