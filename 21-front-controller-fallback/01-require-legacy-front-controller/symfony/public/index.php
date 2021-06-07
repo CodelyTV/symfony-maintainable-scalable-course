@@ -1,6 +1,7 @@
 <?php
 
 use App\Kernel;
+use App\LegacyBridge;
 use Symfony\Component\Dotenv\Dotenv;
 use Symfony\Component\ErrorHandler\Debug;
 use Symfony\Component\HttpFoundation\Request;
@@ -18,9 +19,12 @@ if ($_SERVER['APP_DEBUG']) {
 $kernel = new Kernel($_SERVER['APP_ENV'], (bool) $_SERVER['APP_DEBUG']);
 $request = Request::createFromGlobals();
 $response = $kernel->handle($request);
-if ($response->isNotFound()) {
-    require __DIR__ . '/../../legacy/public/index.php';
+
+$scriptFile = LegacyBridge::prepareLegacyScript($request, $response, __DIR__);
+if ($scriptFile !== null) {
+    require $scriptFile;
 } else {
     $response->send();
 }
+
 $kernel->terminate($request, $response);
