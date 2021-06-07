@@ -18,5 +18,9 @@ if ($_SERVER['APP_DEBUG']) {
 $kernel = new Kernel($_SERVER['APP_ENV'], (bool) $_SERVER['APP_DEBUG']);
 $request = Request::createFromGlobals();
 $response = $kernel->handle($request);
-$response->send();
+if ($response->isNotFound()) {
+    require __DIR__ . '/../../legacy/public/index.php';
+} else {
+    $response->send();
+}
 $kernel->terminate($request, $response);
