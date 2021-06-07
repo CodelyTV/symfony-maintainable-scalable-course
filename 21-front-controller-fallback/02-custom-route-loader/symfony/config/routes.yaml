@@ -1,3 +1,6 @@
 index:
     path: /courses
     controller: App\Controller\CourseListGetController
+legacy:
+    resource: .
+    type: legacy
