@@ -20,6 +20,9 @@
     "swiftmailer/swiftmailer": {
         "version": "v6.2.7"
     },
+    "symfony/amqp-messenger": {
+        "version": "v5.2.10"
+    },
     "symfony/cache": {
         "version": "v5.2.10"
     },
@@ -46,6 +49,9 @@
     },
     "symfony/deprecation-contracts": {
         "version": "v2.4.0"
+    },
+    "symfony/doctrine-messenger": {
+        "version": "v5.2.10"
     },
     "symfony/dotenv": {
         "version": "v5.2.10"
@@ -106,6 +112,33 @@
     "symfony/http-kernel": {
         "version": "v5.2.10"
     },
+    "symfony/mailer": {
+        "version": "4.3",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "master",
+            "version": "4.3",
+            "ref": "15658c2a0176cda2e7dba66276a2030b52bd81b2"
+        },
+        "files": [
+            "config/packages/mailer.yaml"
+        ]
+    },
+    "symfony/messenger": {
+        "version": "4.3",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "master",
+            "version": "4.3",
+            "ref": "e9a414b113ceadbf4e52abe37bf8f1b443f06ccb"
+        },
+        "files": [
+            "config/packages/messenger.yaml"
+        ]
+    },
+    "symfony/mime": {
+        "version": "v5.2.10"
+    },
     "symfony/polyfill-intl-grapheme": {
         "version": "v1.23.0"
     },
@@ -126,6 +159,9 @@
     },
     "symfony/polyfill-php81": {
         "version": "v1.23.0"
+    },
+    "symfony/redis-messenger": {
+        "version": "v5.2.10"
     },
     "symfony/routing": {
         "version": "5.1",
