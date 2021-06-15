@@ -1,3 +1,19 @@
-#index:
-#    path: /
-#    controller: App\Controller\DefaultController::index
+food_file_get_contents:
+    path: /food-file-get-contents
+    controller: App\Controller\FoodGetController::fileGetContents
+
+food_fopen:
+    path: /food-fopen
+    controller: App\Controller\FoodGetController::fopen
+
+food_streamed_response:
+    path: /food-streamed
+    controller: App\Controller\FoodGetController::streamed
+
+food_streamed_response_logging:
+    path: /food-streamed-logging
+    controller: App\Controller\FoodGetController::streamedLogging
+
+food_binary:
+    path: /food-binary
+    controller: App\Controller\FoodGetController::binary
