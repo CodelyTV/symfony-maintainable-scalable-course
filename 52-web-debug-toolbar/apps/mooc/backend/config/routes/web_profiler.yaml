@@ -5,3 +5,8 @@ web_profiler_wdt:
 web_profiler_profiler:
   resource: '@WebProfilerBundle/Resources/config/routing/profiler.xml'
   prefix: /_profiler
+
+publish_domain_events:
+  path: /_publish
+  controller: CodelyTv\Apps\Mooc\Backend\Controller\HealthCheck\PublishDomainEventsGetController
+  methods: [ GET ]

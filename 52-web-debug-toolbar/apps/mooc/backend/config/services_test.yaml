@@ -11,4 +11,17 @@ services:
 
   # Instance selector
   CodelyTv\Shared\Domain\RandomNumberGenerator: '@CodelyTv\Tests\Shared\Infrastructure\ConstantRandomNumberGenerator'
-#  CodelyTv\Shared\Domain\Bus\Event\EventBus: '@CodelyTv\Shared\Infrastructure\Bus\Event\InMemory\InMemorySymfonyEventBus'
+  CodelyTv\Shared\Domain\Bus\Event\EventBus: '@CodelyTv\Shared\Infrastructure\Bus\Event\SymfonyRequestInjectorEventBusDecorator'
+
+  CodelyTv\Shared\Infrastructure\Bus\Event\SymfonyRequestInjectorEventBusDecorator:
+    autowire: false
+    arguments:
+      - '@CodelyTv\Shared\Infrastructure\Bus\Event\MySql\MySqlDoctrineEventBus'
+      - '@request_stack'
+
+  CodelyTv\Apps\Mooc\Backend\DataCollector\EventBusDataCollector:
+    tags:
+      -
+        name: data_collector
+        id: 'CodelyTv\Apps\Mooc\Backend\DataCollector\EventBusDataCollector'
+        template: 'data_collector/event-bus.html.twig'
