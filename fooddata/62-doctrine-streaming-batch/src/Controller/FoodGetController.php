@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace App\Controller;
 
+use App\Entity\Food;
+use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\BinaryFileResponse;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\StreamedResponse;
@@ -12,6 +14,12 @@ final class FoodGetController
 {
     const FOOD_CSV_FILE = __DIR__ . '/../../var/branded_food.csv';
     const SEARCH_TERM = '';
+
+    public function __construct(
+        private EntityManagerInterface $entityManager
+    )
+    {
+    }
 
     public function fileGetContents(): Response
     {
@@ -102,5 +110,21 @@ final class FoodGetController
     public function binary(): Response
     {
         return new BinaryFileResponse(self::FOOD_CSV_FILE);
+    }
+
+    public function streamedDoctrine(): Response
+    {
+        $response = new StreamedResponse();
+        $response->setCallback(function() {
+            $query = $this->entityManager->createQuery("SELECT f FROM App\Entity\Food f ORDER BY f.id DESC");
+            /** @var Food $food */
+            foreach ($query->toIterable() as $food) {
+                echo $food->id() . ' ' . $food->name() . PHP_EOL;
+
+                $this->entityManager->detach($food);
+            }
+        });
+        $response->headers->set('Content-Type', 'text/plain');
+        return $response;
     }
 }
