@@ -48,6 +48,8 @@
     "fzaninotto/faker": "^1.9",
 
     "symfony/debug": "^4.4",
+    "symfony/web-profiler-bundle": "^5.3",
+    "symfony/stopwatch": "^5.3",
     "vimeo/psalm": "^4.1"
   },
   "autoload": {
