@@ -21,24 +21,31 @@ final class ProcessFeedGetController
     public function __invoke(): Response
     {
         $iterable = $this->feedFetcher->fetch(__DIR__ . '/../../var/branded_food.csv');
+        $bannedWords = ['SOUP', 'SOY', 'FARM'];
+        $iterable = $this->filterFoodWithBannedWords($iterable, $bannedWords);
         $this->save($iterable);
         return new Response();
     }
 
+    private function filterFoodWithBannedWords(iterable $foods, array $bannedWords): iterable
+    {
+        foreach ($foods as $food) {
+            if ($food->hasBannedWords($bannedWords)) {
+                continue;
+            }
+            yield $food;
+        }
+    }
+
     private function save(iterable $csvFoods): void
     {
-        $batchSize = 1000;
+        $batchSize = 1;
         $total = 0;
 
         foreach ($csvFoods as $csvFood) {
             $foundFood = $this->foodRepository->find($csvFood->id());
 
             if (!$foundFood) {
-                continue;
-            }
-
-            $bannedWords = ['SOUP', 'SOY', 'FARM'];
-            if ($csvFood->hasBannedWords($bannedWords)) {
                 continue;
             }
 
