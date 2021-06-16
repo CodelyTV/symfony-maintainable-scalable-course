@@ -13,7 +13,7 @@ use Symfony\Component\HttpFoundation\StreamedResponse;
 final class FoodGetController
 {
     const FOOD_CSV_FILE = __DIR__ . '/../../var/branded_food.csv';
-    const SEARCH_TERM = '';
+    const SEARCH_TERM = 'soy';
 
     public function __construct(
         private EntityManagerInterface $entityManager
@@ -63,7 +63,8 @@ final class FoodGetController
             return new Response('File not found', 404);
         }
 
-        return new StreamedResponse(function() use ($fileHandle) {
+        $response = new StreamedResponse();
+        $response->setCallback(function () use ($fileHandle) {
             while (!feof($fileHandle)) {
                 $line = fgets($fileHandle);
                 if (!$line) {
@@ -76,6 +77,8 @@ final class FoodGetController
 
             fclose($fileHandle);
         });
+        $response->headers->set('Content-Type', 'text/plain');
+        return $response;
     }
 
     public function streamedLogging(): Response
@@ -85,7 +88,8 @@ final class FoodGetController
             return new Response('File not found', 404);
         }
 
-        return new StreamedResponse(function() use ($fileHandle) {
+        $response = new StreamedResponse();
+        $response->setCallback(function () use ($fileHandle) {
             $lineCount = 0;
             echo '<script>console.log("starting")</script>';
             while (!feof($fileHandle)) {
@@ -99,12 +103,14 @@ final class FoodGetController
                 }
 
                 if ($lineCount % 1000 === 0) {
-                    echo '<script>console.log("'.$lineCount.'")</script>';
+                    echo '<script>console.log("' . $lineCount . '")</script>';
                 }
             }
 
             fclose($fileHandle);
         });
+        $response->headers->set('Content-Type', 'text/plain');
+        return $response;
     }
 
     public function binary(): Response

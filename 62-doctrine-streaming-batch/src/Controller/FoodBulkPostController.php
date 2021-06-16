@@ -18,7 +18,7 @@ final class FoodBulkPostController
     {
     }
 
-    public function noBatch()
+    public function noBatch(): Response
     {
         $fileHandle = fopen(self::FOOD_CSV_FILE, 'r');
         if (!$fileHandle) {
