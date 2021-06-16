@@ -36,4 +36,9 @@ final class UserRegisteredDomainEvent extends DomainEvent
             'email'     => $this->email,
         ];
     }
+
+    public function email(): string
+    {
+        return $this->email;
+    }
 }
