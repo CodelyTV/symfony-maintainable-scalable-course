@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace CodelyTv\Apps\Mooc\Backend\DataCollector;
+namespace CodelyTv\Shared\Infrastructure\Symfony\Profiler;
 
 use Symfony\Bundle\FrameworkBundle\DataCollector\AbstractDataCollector;
 use Symfony\Component\HttpFoundation\Request;
@@ -11,6 +11,7 @@ use Throwable;
 
 final class EventBusDataCollector extends AbstractDataCollector
 {
+    /** onKernelResponse */
     public function collect(Request $request, Response $response, Throwable $exception = null)
     {
         $this->data = [

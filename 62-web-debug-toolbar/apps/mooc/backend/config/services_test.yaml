@@ -19,9 +19,9 @@ services:
       - '@CodelyTv\Shared\Infrastructure\Bus\Event\MySql\MySqlDoctrineEventBus'
       - '@request_stack'
 
-  CodelyTv\Apps\Mooc\Backend\DataCollector\EventBusDataCollector:
+  CodelyTv\Shared\Infrastructure\Symfony\Profiler\EventBusDataCollector:
     tags:
       -
         name: data_collector
-        id: 'CodelyTv\Apps\Mooc\Backend\DataCollector\EventBusDataCollector'
-        template: 'data_collector/event-bus.html.twig'
+        id: 'CodelyTv\Shared\Infrastructure\Symfony\Profiler\EventBusDataCollector'
+        template: 'event-bus.html.twig'
