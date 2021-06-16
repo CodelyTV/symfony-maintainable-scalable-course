@@ -1,0 +1,7 @@
+framework:
+  profiler:
+    only_exceptions: false
+    collect: true
+
+web_profiler:
+  toolbar: true

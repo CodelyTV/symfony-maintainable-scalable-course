@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<psalm
+    errorLevel="4"
+    resolveFromConfigFile="true"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns="https://getpsalm.org/schema/config"
+    xsi:schemaLocation="https://getpsalm.org/schema/config vendor/vimeo/psalm/config.xsd"
+>
+    <projectFiles>
+        <directory name="apps/backoffice/backend/src" />
+        <directory name="apps/backoffice/frontend/src" />
+        <directory name="apps/mooc/backend/src" />
+        <directory name="apps/mooc/frontend/src" />
+        <directory name="src" />
+        <directory name="tests" />
+        <ignoreFiles>
+            <directory name="vendor" />
+            <directory name="src/Shared/Infrastructure/Bus/Event/RabbitMq" />
+            <directory name="src/Shared/Infrastructure/Symfony" />
+            <directory name="tests/Shared/Infrastructure/Bus/Event/RabbitMq" />
+            <directory name="tests/Shared/Infrastructure/Mink" />
+            <directory name="tests/Shared/Infrastructure/PhpUnit/Constraint" />
+        </ignoreFiles>
+    </projectFiles>
+</psalm>
