@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "75fd709fa045172f2df52fef79285383",
+    "content-hash": "8de81468b0425daf309755e2dc705d5d",
     "packages": [
         {
             "name": "composer/package-versions-deprecated",
@@ -899,16 +899,16 @@
         },
         {
             "name": "doctrine/orm",
-            "version": "2.9.2",
+            "version": "2.9.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/orm.git",
-                "reference": "75b4b88c5b7cebc24ed7251a20c2a5aa027300e1"
+                "reference": "82e77cf5089a1303733f75f0f0ed01be3ab9ec22"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/orm/zipball/75b4b88c5b7cebc24ed7251a20c2a5aa027300e1",
-                "reference": "75b4b88c5b7cebc24ed7251a20c2a5aa027300e1",
+                "url": "https://api.github.com/repos/doctrine/orm/zipball/82e77cf5089a1303733f75f0f0ed01be3ab9ec22",
+                "reference": "82e77cf5089a1303733f75f0f0ed01be3ab9ec22",
                 "shasum": ""
             },
             "require": {
@@ -985,9 +985,9 @@
             ],
             "support": {
                 "issues": "https://github.com/doctrine/orm/issues",
-                "source": "https://github.com/doctrine/orm/tree/2.9.2"
+                "source": "https://github.com/doctrine/orm/tree/2.9.3"
             },
-            "time": "2021-05-31T09:53:14+00:00"
+            "time": "2021-06-13T10:29:22+00:00"
         },
         {
             "name": "doctrine/persistence",
@@ -1078,16 +1078,16 @@
         },
         {
             "name": "elasticsearch/elasticsearch",
-            "version": "v7.13.0",
+            "version": "v7.13.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/elastic/elasticsearch-php.git",
-                "reference": "7343050106bf73ef9f63cf21490024e001829c81"
+                "reference": "45e17adacd3319958d6135e4ee3a21dbbe36a24b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/elastic/elasticsearch-php/zipball/7343050106bf73ef9f63cf21490024e001829c81",
-                "reference": "7343050106bf73ef9f63cf21490024e001829c81",
+                "url": "https://api.github.com/repos/elastic/elasticsearch-php/zipball/45e17adacd3319958d6135e4ee3a21dbbe36a24b",
+                "reference": "45e17adacd3319958d6135e4ee3a21dbbe36a24b",
                 "shasum": ""
             },
             "require": {
@@ -1138,9 +1138,9 @@
             ],
             "support": {
                 "issues": "https://github.com/elastic/elasticsearch-php/issues",
-                "source": "https://github.com/elastic/elasticsearch-php/tree/v7.13.0"
+                "source": "https://github.com/elastic/elasticsearch-php/tree/v7.13.1"
             },
-            "time": "2021-05-25T20:30:27+00:00"
+            "time": "2021-06-15T18:36:52+00:00"
         },
         {
             "name": "endclothing/prometheus_client_php",
@@ -7991,12 +7991,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Roave/SecurityAdvisories.git",
-                "reference": "ba841897ca44f2ef8eff82d0edf3d6681f0e9875"
+                "reference": "dec8e13f092ec91fbfa1a5873d2d4a2935a5f74e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/ba841897ca44f2ef8eff82d0edf3d6681f0e9875",
-                "reference": "ba841897ca44f2ef8eff82d0edf3d6681f0e9875",
+                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/dec8e13f092ec91fbfa1a5873d2d4a2935a5f74e",
+                "reference": "dec8e13f092ec91fbfa1a5873d2d4a2935a5f74e",
                 "shasum": ""
             },
             "conflict": {
@@ -8193,8 +8193,8 @@
                 "silverstripe/cms": "<4.3.6|>=4.4,<4.4.4",
                 "silverstripe/comments": ">=1.3,<1.9.99|>=2,<2.9.99|>=3,<3.1.1",
                 "silverstripe/forum": "<=0.6.1|>=0.7,<=0.7.3",
-                "silverstripe/framework": "<4.4.7|>=4.5,<4.5.4",
-                "silverstripe/graphql": "<=3.5",
+                "silverstripe/framework": "<4.7.4",
+                "silverstripe/graphql": "<=3.5|>=4-alpha.1,<4-alpha.2",
                 "silverstripe/registry": ">=2.1,<2.1.2|>=2.2,<2.2.1",
                 "silverstripe/restfulserver": ">=1,<1.0.9|>=2,<2.0.4",
                 "silverstripe/subsites": ">=2,<2.1.1",
@@ -8213,7 +8213,7 @@
                 "squizlabs/php_codesniffer": ">=1,<2.8.1|>=3,<3.0.1",
                 "ssddanbrown/bookstack": "<0.29.2",
                 "stormpath/sdk": ">=0,<9.9.99",
-                "studio-42/elfinder": "<2.1.49",
+                "studio-42/elfinder": "<2.1.58",
                 "sulu/sulu": "<1.6.34|>=2,<2.0.10|>=2.1,<2.1.1",
                 "swiftmailer/swiftmailer": ">=4,<5.4.5",
                 "sylius/admin-bundle": ">=1,<1.0.17|>=1.1,<1.1.9|>=1.2,<1.2.2",
@@ -8350,7 +8350,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2021-06-10T17:35:36+00:00"
+            "time": "2021-06-15T16:08:57+00:00"
         },
         {
             "name": "sebastian/cli-parser",
@@ -9209,16 +9209,16 @@
         },
         {
             "name": "sebastian/type",
-            "version": "2.3.2",
+            "version": "2.3.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/type.git",
-                "reference": "0d1c587401514d17e8f9258a27e23527cb1b06c1"
+                "reference": "b8cd8a1c753c90bc1a0f5372170e3e489136f914"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/type/zipball/0d1c587401514d17e8f9258a27e23527cb1b06c1",
-                "reference": "0d1c587401514d17e8f9258a27e23527cb1b06c1",
+                "url": "https://api.github.com/repos/sebastianbergmann/type/zipball/b8cd8a1c753c90bc1a0f5372170e3e489136f914",
+                "reference": "b8cd8a1c753c90bc1a0f5372170e3e489136f914",
                 "shasum": ""
             },
             "require": {
@@ -9253,7 +9253,7 @@
             "homepage": "https://github.com/sebastianbergmann/type",
             "support": {
                 "issues": "https://github.com/sebastianbergmann/type/issues",
-                "source": "https://github.com/sebastianbergmann/type/tree/2.3.2"
+                "source": "https://github.com/sebastianbergmann/type/tree/2.3.4"
             },
             "funding": [
                 {
@@ -9261,7 +9261,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2021-06-04T13:02:07+00:00"
+            "time": "2021-06-15T12:49:02+00:00"
         },
         {
             "name": "sebastian/version",
@@ -9595,51 +9595,6 @@
             "time": "2021-05-26T11:20:16+00:00"
         },
         {
-            "name": "symfony/profiler-pack",
-            "version": "v1.0.5",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/symfony/profiler-pack.git",
-                "reference": "29ec66471082b4eb068db11eb4f0a48c277653f7"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/symfony/profiler-pack/zipball/29ec66471082b4eb068db11eb4f0a48c277653f7",
-                "reference": "29ec66471082b4eb068db11eb4f0a48c277653f7",
-                "shasum": ""
-            },
-            "require": {
-                "symfony/stopwatch": "*",
-                "symfony/twig-bundle": "*",
-                "symfony/web-profiler-bundle": "*"
-            },
-            "type": "symfony-pack",
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "description": "A pack for the Symfony web profiler",
-            "support": {
-                "issues": "https://github.com/symfony/profiler-pack/issues",
-                "source": "https://github.com/symfony/profiler-pack/tree/v1.0.5"
-            },
-            "funding": [
-                {
-                    "url": "https://symfony.com/sponsor",
-                    "type": "custom"
-                },
-                {
-                    "url": "https://github.com/fabpot",
-                    "type": "github"
-                },
-                {
-                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
-                    "type": "tidelift"
-                }
-            ],
-            "time": "2020-08-12T06:50:46+00:00"
-        },
-        {
             "name": "symfony/proxy-manager-bridge",
             "version": "v5.2.1",
             "source": {
@@ -9708,68 +9663,6 @@
                 }
             ],
             "time": "2020-11-12T22:25:33+00:00"
-        },
-        {
-            "name": "symfony/stopwatch",
-            "version": "v5.3.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/symfony/stopwatch.git",
-                "reference": "313d02f59d6543311865007e5ff4ace05b35ee65"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/symfony/stopwatch/zipball/313d02f59d6543311865007e5ff4ace05b35ee65",
-                "reference": "313d02f59d6543311865007e5ff4ace05b35ee65",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=7.2.5",
-                "symfony/service-contracts": "^1.0|^2"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Symfony\\Component\\Stopwatch\\": ""
-                },
-                "exclude-from-classmap": [
-                    "/Tests/"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Fabien Potencier",
-                    "email": "fabien@symfony.com"
-                },
-                {
-                    "name": "Symfony Community",
-                    "homepage": "https://symfony.com/contributors"
-                }
-            ],
-            "description": "Provides a way to profile code",
-            "homepage": "https://symfony.com",
-            "support": {
-                "source": "https://github.com/symfony/stopwatch/tree/v5.3.0"
-            },
-            "funding": [
-                {
-                    "url": "https://symfony.com/sponsor",
-                    "type": "custom"
-                },
-                {
-                    "url": "https://github.com/fabpot",
-                    "type": "github"
-                },
-                {
-                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
-                    "type": "tidelift"
-                }
-            ],
-            "time": "2021-05-26T17:43:10+00:00"
         },
         {
             "name": "symfony/translation",
@@ -9865,51 +9758,6 @@
                 }
             ],
             "time": "2021-05-29T22:28:28+00:00"
-        },
-        {
-            "name": "symfony/twig-pack",
-            "version": "v1.0.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/symfony/twig-pack.git",
-                "reference": "08a73e833e07921c464336deb7630f93e85ef930"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/symfony/twig-pack/zipball/08a73e833e07921c464336deb7630f93e85ef930",
-                "reference": "08a73e833e07921c464336deb7630f93e85ef930",
-                "shasum": ""
-            },
-            "require": {
-                "symfony/twig-bundle": "*",
-                "twig/extra-bundle": "^2.12|^3.0",
-                "twig/twig": "^2.12|^3.0"
-            },
-            "type": "symfony-pack",
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "description": "A Twig pack for Symfony projects",
-            "support": {
-                "issues": "https://github.com/symfony/twig-pack/issues",
-                "source": "https://github.com/symfony/twig-pack/tree/v1.0.1"
-            },
-            "funding": [
-                {
-                    "url": "https://symfony.com/sponsor",
-                    "type": "custom"
-                },
-                {
-                    "url": "https://github.com/fabpot",
-                    "type": "github"
-                },
-                {
-                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
-                    "type": "tidelift"
-                }
-            ],
-            "time": "2020-10-19T08:46:41+00:00"
         },
         {
             "name": "symfony/web-profiler-bundle",
@@ -10038,84 +9886,6 @@
                 }
             ],
             "time": "2020-07-12T23:59:07+00:00"
-        },
-        {
-            "name": "twig/extra-bundle",
-            "version": "v3.3.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/twigphp/twig-extra-bundle.git",
-                "reference": "e12a8ee63387abb83fb7e4c897663bfb94ac22b6"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/twigphp/twig-extra-bundle/zipball/e12a8ee63387abb83fb7e4c897663bfb94ac22b6",
-                "reference": "e12a8ee63387abb83fb7e4c897663bfb94ac22b6",
-                "shasum": ""
-            },
-            "require": {
-                "php": "^7.1.3|^8.0",
-                "symfony/framework-bundle": "^4.3|^5.0",
-                "symfony/twig-bundle": "^4.3|^5.0",
-                "twig/twig": "^2.4|^3.0"
-            },
-            "require-dev": {
-                "symfony/phpunit-bridge": "^4.4.9|^5.0.9",
-                "twig/cache-extra": "^3.0",
-                "twig/cssinliner-extra": "^2.12|^3.0",
-                "twig/html-extra": "^2.12|^3.0",
-                "twig/inky-extra": "^2.12|^3.0",
-                "twig/intl-extra": "^2.12|^3.0",
-                "twig/markdown-extra": "^2.12|^3.0",
-                "twig/string-extra": "^2.12|^3.0"
-            },
-            "type": "symfony-bundle",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "3.2-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Twig\\Extra\\TwigExtraBundle\\": ""
-                },
-                "exclude-from-classmap": [
-                    "/Tests/"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Fabien Potencier",
-                    "email": "fabien@symfony.com",
-                    "homepage": "http://fabien.potencier.org",
-                    "role": "Lead Developer"
-                }
-            ],
-            "description": "A Symfony bundle for extra Twig extensions",
-            "homepage": "https://twig.symfony.com",
-            "keywords": [
-                "bundle",
-                "extra",
-                "twig"
-            ],
-            "support": {
-                "source": "https://github.com/twigphp/twig-extra-bundle/tree/v3.3.1"
-            },
-            "funding": [
-                {
-                    "url": "https://github.com/fabpot",
-                    "type": "github"
-                },
-                {
-                    "url": "https://tidelift.com/funding/github/packagist/twig/twig",
-                    "type": "tidelift"
-                }
-            ],
-            "time": "2021-05-12T07:47:40+00:00"
         },
         {
             "name": "vimeo/psalm",
