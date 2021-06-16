@@ -21,6 +21,9 @@ services:
     resource: '../src/Controller'
     tags: ['controller.service_arguments']
 
+  CodelyTv\Apps\Mooc\Backend\EventSubscriber\:
+    resource: '../src/EventSubscriber'
+
   CodelyTv\Apps\Mooc\Backend\Command\:
     resource: '../src/Command'
     tags: ['console.command']
@@ -96,3 +99,5 @@ services:
 
   # -- IMPLEMENTATIONS SELECTOR --
   CodelyTv\Shared\Domain\Bus\Event\EventBus: '@CodelyTv\Shared\Infrastructure\Bus\Event\WithMonitoring\WithPrometheusMonitoringEventBus'
+  CodelyTv\Mooc\Users\Domain\RegistrationEmailSender: '@CodelyTv\Mooc\Users\Infrastructure\Email\MailtrapRegistrationEmailSender'
+  # CodelyTv\Mooc\Users\Domain\RegistrationEmailSender: '@CodelyTv\Mooc\Users\Infrastructure\Email\InMemoryRegistrationEmailSender'
