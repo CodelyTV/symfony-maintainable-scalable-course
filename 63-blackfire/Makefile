@@ -10,6 +10,10 @@ start: composer .docker-compose-up
 stop:
 	@docker-compose stop
 
+.PHONY: down
+down:
+	@docker-compose down
+
 .PHONY: composer
 composer:
 	@docker run --rm -ti --volume ${PWD}:/app --user $(id -u):$(id -g) \
@@ -22,3 +26,4 @@ reset-db:
 	@docker-compose exec php bin/console doctrine:schema:drop --force
 	@docker-compose exec php bin/console doctrine:schema:update --force
 	@docker-compose exec php bin/console cache:clear
+	@curl http://localhost:8000/food-bulk-insert

@@ -18,33 +18,7 @@ final class FoodBulkPostController
     {
     }
 
-    public function noBatch(): Response
-    {
-        $fileHandle = fopen(self::FOOD_CSV_FILE, 'r');
-        if (!$fileHandle) {
-            return new Response('File not found', 404);
-        }
-
-        while (!feof($fileHandle)) {
-            $line = fgetcsv($fileHandle);
-            if (!$line) {
-                break;
-            }
-
-            $food = new Food($line[0], $line[1]);
-
-            $this->entityManager->persist($food);
-        }
-
-        $this->entityManager->flush();
-        $this->entityManager->clear();
-
-        fclose($fileHandle);
-
-        return new Response();
-    }
-
-    public function batch(): Response
+    public function __invoke(): Response
     {
         $fileHandle = fopen(self::FOOD_CSV_FILE, 'r');
         if (!$fileHandle) {

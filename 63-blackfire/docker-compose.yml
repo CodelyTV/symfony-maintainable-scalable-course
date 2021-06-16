@@ -16,6 +16,8 @@ services:
       - 8000:8000
     volumes:
       - ./:/app
+    environment:
+      - PHP_MEMORY_LIMIT=2049M
     command: symfony serve --dir=/app --force-php-discovery
   blackfire:
     image: blackfire/blackfire:2

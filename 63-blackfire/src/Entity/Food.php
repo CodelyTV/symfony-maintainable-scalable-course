@@ -22,4 +22,20 @@ class Food
     {
         return $this->name;
     }
+
+    public function setName($name): void
+    {
+        $this->name = $name;
+    }
+
+    public function hasBannedWords(array $bannedWords): bool
+    {
+        foreach ($bannedWords as $word) {
+            if (str_contains($this->name(), $word)) {
+                return true;
+            }
+        }
+
+        return false;
+    }
 }
