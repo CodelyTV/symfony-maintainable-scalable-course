@@ -39,7 +39,7 @@ final class ProcessFeedGetController
 
     private function save(iterable $csvFoods): void
     {
-        $batchSize = 1;
+        $batchSize = 1000;
         $total = 0;
 
         foreach ($csvFoods as $csvFood) {
