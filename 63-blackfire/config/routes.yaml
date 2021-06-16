@@ -1,0 +1,40 @@
+food_file_get_contents:
+    path: /food-file-get-contents
+    controller: App\Controller\FoodGetController::fileGetContents
+    methods: [ GET ]
+
+food_fopen:
+    path: /food-fopen
+    controller: App\Controller\FoodGetController::fopen
+    methods: [ GET ]
+
+food_streamed_response:
+    path: /food-streamed
+    controller: App\Controller\FoodGetController::streamed
+    methods: [ GET ]
+
+food_streamed_response_logging:
+    path: /food-streamed-logging
+    controller: App\Controller\FoodGetController::streamedLogging
+    methods: [ GET ]
+
+
+food_streamed_response_doctrine:
+    path: /food-streamed-doctrine
+    controller: App\Controller\FoodGetController::streamedDoctrine
+    methods: [ GET ]
+
+food_binary:
+    path: /food-binary
+    controller: App\Controller\FoodGetController::binary
+    methods: [ GET ]
+
+food_bulk_insert_no_batch:
+    path: /food-bulk-insert-no-batch
+    controller: App\Controller\FoodBulkPostController::noBatch
+    methods: [ GET ]
+
+food_bulk_insert_batch:
+    path: /food-bulk-insert-batch
+    controller: App\Controller\FoodBulkPostController::batch
+    methods: [ GET ]
