@@ -38,3 +38,24 @@ food_bulk_insert_batch:
     path: /food-bulk-insert-batch
     controller: App\Controller\FoodBulkPostController::batch
     methods: [ GET ]
+
+dbal_sqli:
+    path: /dbalsqli/{name}
+    controller: App\Controller\FoodGetController::dbalSQLi
+    methods: [ GET ]
+
+dbal:
+    path: /dbal/{name}
+    controller: App\Controller\FoodGetController::dbal
+    methods: [ GET ]
+
+query_builder:
+    path: /queryBuilder/{name}
+    controller: App\Controller\FoodGetController::queryBuilder
+    methods: [ GET ]
+
+orm:
+    path: /orm/{name}
+    controller: App\Controller\FoodGetController::orm
+    methods: [ GET ]
+

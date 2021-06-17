@@ -5,8 +5,10 @@ declare(strict_types=1);
 namespace App\Controller;
 
 use App\Entity\Food;
+use Doctrine\DBAL\Connection;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\BinaryFileResponse;
+use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\StreamedResponse;
 
@@ -16,7 +18,8 @@ final class FoodGetController
     const SEARCH_TERM = 'soy';
 
     public function __construct(
-        private EntityManagerInterface $entityManager
+        private EntityManagerInterface $entityManager,
+        private Connection $connection
     )
     {
     }
@@ -131,5 +134,73 @@ final class FoodGetController
         });
         $response->headers->set('Content-Type', 'text/plain');
         return $response;
+    }
+
+    // http://localhost:8000/dbal/CAMPBELL SOUP COMPANY
+    // http://localhost:8000/dbal/'%20OR%20'1'='1
+    /**
+     * @throws \Doctrine\DBAL\Driver\Exception
+     * @throws \Doctrine\DBAL\Exception
+     */
+    public function dbalSQLi(string $name): Response
+    {
+        $result = $this->connection->executeQuery("SELECT * FROM food f WHERE f.name = '$name' ORDER BY f.id DESC");
+        return new JsonResponse($result->fetchAllAssociative());
+    }
+
+    // http://localhost:8000/dbal/'%20OR%20'1'='1
+    // http://localhost:8000/dbal/CAMPBELL SOUP COMPANY
+    /**
+     * @throws \Doctrine\DBAL\Driver\Exception
+     * @throws \Doctrine\DBAL\Exception
+     */
+    public function dbal(string $name): Response
+    {
+        $sql = "SELECT * FROM food WHERE name = :name";
+        $stmt = $this->connection->prepare($sql);
+        $stmt->bindValue("name", $name);
+        $result = $stmt->executeQuery();
+        return new JsonResponse($result->fetchAllAssociative());
+    }
+
+    // http://localhost:8000/dbal/CAMPBELL SOUP COMPANY
+    // http://localhost:8000/dbal/'%20OR%20'1'='1
+    /**
+     * @throws \Doctrine\DBAL\Driver\Exception
+     * @throws \Doctrine\DBAL\Exception
+     */
+    public function queryBuilder(string $name): Response
+    {
+        $result = $this->connection->createQueryBuilder()
+            ->select('id', 'name')
+            ->from('food')
+            ->where('name = :name')
+            ->setParameter('name', $name)
+            ->execute()
+        ;
+        return new JsonResponse($result->fetchAllAssociative());
+    }
+
+    // http://localhost:8000/dbal/CAMPBELL SOUP COMPANY
+    // http://localhost:8000/dbal/'%20OR%20'1'='1
+    /**
+     * @throws \Doctrine\DBAL\Driver\Exception
+     * @throws \Doctrine\DBAL\Exception
+     */
+    public function orm(string $name): Response
+    {
+        $query = $this->entityManager->createQuery(
+            "SELECT f FROM App\Entity\Food f WHERE f.name = :name ORDER BY f.id DESC"
+        );
+        $results = $query->execute(['name' => $name ]);
+
+        return new JsonResponse(
+            array_map(function(Food $food) {
+                return [
+                    'id' => $food->id(),
+                    'name' => $food->name()
+                ];
+            }, $results)
+        );
     }
 }
