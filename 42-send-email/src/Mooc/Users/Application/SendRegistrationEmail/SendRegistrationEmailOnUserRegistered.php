@@ -5,8 +5,9 @@ declare(strict_types=1);
 namespace CodelyTv\Mooc\Users\Application\SendRegistrationEmail;
 
 use CodelyTv\Mooc\Users\Domain\UserRegisteredDomainEvent;
+use CodelyTv\Shared\Domain\Bus\Event\DomainEventSubscriber;
 
-final class SendRegistrationEmailOnUserRegistered
+final class SendRegistrationEmailOnUserRegistered implements DomainEventSubscriber
 {
     public function __construct(private RegistrationEmailSender $emailSender)
     {
@@ -19,6 +20,6 @@ final class SendRegistrationEmailOnUserRegistered
 
     public function __invoke(UserRegisteredDomainEvent $event): void
     {
-        $this->emailSender->send($event->email());
+        $this->emailSender->send($event->aggregateId());
     }
 }

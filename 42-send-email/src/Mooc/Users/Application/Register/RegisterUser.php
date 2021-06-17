@@ -25,7 +25,6 @@ final class RegisterUser
         $user = User::register($id, $email);
 
         $this->repository->save($user);
-        $this->registrationEmailSender->sendTo($user);
         $this->bus->publish(...$user->pullDomainEvents());
     }
 }

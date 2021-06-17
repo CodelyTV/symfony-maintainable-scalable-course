@@ -7,12 +7,14 @@ namespace CodelyTv\Shared\Infrastructure\Bus\Event\InMemory;
 use CodelyTv\Shared\Domain\Bus\Event\DomainEvent;
 use CodelyTv\Shared\Domain\Bus\Event\EventBus;
 use CodelyTv\Shared\Infrastructure\Bus\CallableFirstParameterExtractor;
+use Symfony\Component\EventDispatcher\EventSubscriberInterface;
+use Symfony\Component\HttpKernel\Event\TerminateEvent;
 use Symfony\Component\Messenger\Exception\NoHandlerForMessageException;
 use Symfony\Component\Messenger\Handler\HandlersLocator;
 use Symfony\Component\Messenger\MessageBus;
 use Symfony\Component\Messenger\Middleware\HandleMessageMiddleware;
 
-class InMemorySymfonyEventBus implements EventBus
+class InMemorySymfonyEventBus implements EventBus, EventSubscriberInterface
 {
     private MessageBus $bus;
 
@@ -33,9 +35,14 @@ class InMemorySymfonyEventBus implements EventBus
     {
         foreach ($events as $event) {
             try {
-                $this->bus->dispatch($event);
+                $this->eventsToPublish[] = $event;
             } catch (NoHandlerForMessageException) {
             }
         }
+    }
+
+    public static function getSubscribedEvents()
+    {
+        return [TerminateEvent::class => 'onKernelTerminate'];
     }
 }

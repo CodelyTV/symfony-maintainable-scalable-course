@@ -95,7 +95,7 @@ services:
       - !tagged codely.domain_event_subscriber
 
   CodelyTv\Shared\Infrastructure\Bus\Event\WithMonitoring\WithPrometheusMonitoringEventBus:
-    arguments: ['@CodelyTv\Shared\Infrastructure\Monitoring\PrometheusMonitor', 'mooc_backend', '@CodelyTv\Shared\Infrastructure\Bus\Event\RabbitMq\RabbitMqEventBus']
+    arguments: ['@CodelyTv\Shared\Infrastructure\Monitoring\PrometheusMonitor', 'mooc_backend', '@CodelyTv\Shared\Infrastructure\Bus\Event\InMemory\InMemorySymfonyEventBus']
 
   # -- IMPLEMENTATIONS SELECTOR --
   CodelyTv\Shared\Domain\Bus\Event\EventBus: '@CodelyTv\Shared\Infrastructure\Bus\Event\WithMonitoring\WithPrometheusMonitoringEventBus'
