@@ -17,3 +17,5 @@ RUN docker-php-ext-enable \
         opcache
 
 RUN curl -sS https://get.symfony.com/cli/installer | bash && mv /root/.symfony/bin/symfony /usr/local/bin/symfony
+
+COPY ./etc/docker/php/conf.d/php.ini /usr/local/etc/php/conf.d/php.ini

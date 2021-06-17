@@ -9,6 +9,7 @@ use CodelyTv\Shared\Domain\Bus\Command\CommandBus;
 use CodelyTv\Shared\Domain\Bus\Query\Query;
 use CodelyTv\Shared\Domain\Bus\Query\QueryBus;
 use CodelyTv\Shared\Domain\Bus\Query\Response;
+use Symfony\Component\Serializer\SerializerInterface;
 use function Lambdish\Phunctional\each;
 
 abstract class ApiController
@@ -16,6 +17,7 @@ abstract class ApiController
     public function __construct(
         private QueryBus $queryBus,
         private CommandBus $commandBus,
+        protected SerializerInterface $serializer,
         ApiExceptionsHttpStatusCodeMapping $exceptionHandler
     ) {
         each(

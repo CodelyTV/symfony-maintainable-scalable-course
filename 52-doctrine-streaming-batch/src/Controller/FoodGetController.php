@@ -109,7 +109,6 @@ final class FoodGetController
 
             fclose($fileHandle);
         });
-        $response->headers->set('Content-Type', 'text/plain');
         return $response;
     }
 
@@ -124,10 +123,10 @@ final class FoodGetController
         $response->setCallback(function() {
             $query = $this->entityManager->createQuery("SELECT f FROM App\Entity\Food f ORDER BY f.id DESC");
             /** @var Food $food */
-            foreach ($query->toIterable() as $food) {
+            foreach ($query->toIterable() as $key => $food) {
                 echo $food->id() . ' ' . $food->name() . PHP_EOL;
 
-                $this->entityManager->detach($food);
+                $this->entityManager->clear($food);
             }
         });
         $response->headers->set('Content-Type', 'text/plain');
