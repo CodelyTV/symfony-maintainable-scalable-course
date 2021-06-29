@@ -1,8 +1,10 @@
 login:
   path: /login
+  host: "{%tenantArgumentName%}.%domain%"
   methods: [ POST ]
 
 profile:
   path: /profile
+  host: "{%tenantArgumentName%}.%domain%"
   controller: App\Infrastructure\Controller\ProfileGetController
   methods: [ GET ]

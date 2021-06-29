@@ -8,6 +8,7 @@ final class FindStudentResponse
 {
     public function __construct(
         private string $studentId,
+        private string $companyId,
         private string $studentEmail,
         private string $studentPassword
     ) {
@@ -16,6 +17,11 @@ final class FindStudentResponse
     public function studentId(): string
     {
         return $this->studentId;
+    }
+
+    public function companyId(): string
+    {
+        return $this->companyId;
     }
 
     public function studentEmail(): string

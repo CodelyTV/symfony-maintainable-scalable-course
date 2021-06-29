@@ -10,8 +10,8 @@ final class StudentFinder
     {
     }
 
-    public function find(StudentEmail $email): Student
+    public function find(CompanyId $companyId, StudentEmail $email): Student
     {
-        return $this->students->find($email);
+        return $this->students->find($companyId, $email);
     }
 }

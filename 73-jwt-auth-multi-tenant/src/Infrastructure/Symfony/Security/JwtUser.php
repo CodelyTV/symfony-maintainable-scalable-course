@@ -4,21 +4,28 @@ declare(strict_types=1);
 
 namespace App\Infrastructure\Symfony\Security;
 
+use Lexik\Bundle\JWTAuthenticationBundle\Security\User\JWTUserInterface;
 use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
-use Symfony\Component\Security\Core\User\UserInterface;
 
-final class JwtUser implements UserInterface, PasswordAuthenticatedUserInterface
+final class JwtUser implements JWTUserInterface, PasswordAuthenticatedUserInterface
 {
     public function __construct(
         private string $userId,
+        private string $companyId,
         private string $email,
         private string $hashedPassword
-    ) {
+    )
+    {
     }
 
     public function userId(): string
     {
         return $this->userId;
+    }
+
+    public function companyId(): string
+    {
+        return $this->companyId;
     }
 
     public function getRoles(): array
@@ -48,5 +55,10 @@ final class JwtUser implements UserInterface, PasswordAuthenticatedUserInterface
 
     public function eraseCredentials(): void
     {
+    }
+
+    public static function createFromPayload($username, array $payload): JwtUser
+    {
+        return new self($payload['id'], $username, '', $payload['tenant_id']);
     }
 }

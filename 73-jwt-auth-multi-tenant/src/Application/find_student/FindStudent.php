@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace App\Application\find_student;
 
+use App\Domain\CompanyId;
 use App\Domain\StudentEmail;
 use App\Domain\StudentFinder;
 
@@ -16,9 +17,11 @@ final class FindStudent
     public function __invoke(FindStudentRequest $request): FindStudentResponse
     {
         $email = new StudentEmail($request->studentEmail());
-        $student = $this->studentFinder->find($email);
+        $companyId = new CompanyId($request->companyId());
+        $student = $this->studentFinder->find($companyId, $email);
         return new FindStudentResponse(
             $student->id()->value(),
+            $student->companyId()->value(),
             $student->email()->value(),
             $student->password()->value()
         );

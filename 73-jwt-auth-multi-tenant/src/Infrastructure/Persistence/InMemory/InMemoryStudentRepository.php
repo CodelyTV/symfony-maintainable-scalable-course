@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace App\Infrastructure\Persistence\InMemory;
 
+use App\Domain\CompanyId;
 use App\Domain\Student;
 use App\Domain\StudentEmail;
 use App\Domain\StudentId;
@@ -18,20 +19,29 @@ final class InMemoryStudentRepository implements StudentRepository
     public function __construct()
     {
         $this->students = [
-            'student1@codely.tv' => new Student(
-                new StudentId('student1'),
-                new StudentEmail('student1@codely.tv'),
-                new StudentPassword('$argon2id$v=19$m=65536,t=4,p=1$cCMwQS/w3WP4IpK6sAaEEA$en6JXlvwkdyKlEZTTCfr4UZI2GLajda8pIulbXIEdaw') # codely
-            )
+            'org1' => [
+                'student1@codely.tv' => new Student(
+                    new StudentId('student1'),
+                    new CompanyId('org1'),
+                    new StudentEmail('student1@codely.tv'),
+                    new StudentPassword('$argon2id$v=19$m=65536,t=4,p=1$cCMwQS/w3WP4IpK6sAaEEA$en6JXlvwkdyKlEZTTCfr4UZI2GLajda8pIulbXIEdaw') # codely
+                )
+            ]
         ];
     }
 
-    public function find(StudentEmail $email): Student
+    public function find(CompanyId $companyId, StudentEmail $email): Student
     {
-        if (!array_key_exists($email->value(), $this->students)) {
+        if (!array_key_exists($companyId->value(), $this->students)) {
             throw new StudentDoesNotExist($email->value());
         }
 
-        return $this->students[$email->value()];
+        $companyStudents = $this->students[$companyId->value()];
+
+        if (!array_key_exists($email->value(), $companyStudents)) {
+            throw new StudentDoesNotExist($email->value());
+        }
+
+        return $companyStudents[$email->value()];
     }
 }

@@ -16,10 +16,10 @@ final class ProfileGetController
     {
     }
 
-    public function __invoke(): Response
+    public function __invoke(string $companyId): Response
     {
         $symfonyStudent = $this->security->getUser();
-        $student = ($this->findStudent)(new FindStudentRequest($symfonyStudent->getUsername()));
+        $student = ($this->findStudent)(new FindStudentRequest($companyId, $symfonyStudent->getUsername()));
         return new JsonResponse($student->studentId());
     }
 }

@@ -8,6 +8,7 @@ final class Student
 {
     public function __construct(
         private StudentId $id,
+        private CompanyId $companyId,
         private StudentEmail $email,
         private StudentPassword  $password
     ) {
@@ -16,6 +17,11 @@ final class Student
     public function id(): StudentId
     {
         return $this->id;
+    }
+
+    public function companyId(): CompanyId
+    {
+        return $this->companyId;
     }
 
     public function email(): StudentEmail
