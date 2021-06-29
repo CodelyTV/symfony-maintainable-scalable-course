@@ -16,3 +16,5 @@ services:
     App\Infrastructure\Controller\:
         resource: '../src/Infrastructure/Controller/'
         tags: ['controller.service_arguments']
+
+    App\Domain\StudentRepository: '@App\Infrastructure\Persistence\Doctrine\DoctrineStudentRepository'

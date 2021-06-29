@@ -1,0 +1,18 @@
+doctrine:
+    dbal:
+        url: '%env(resolve:DATABASE_URL)%'
+        types:
+            student_id:  App\Infrastructure\Persistence\Doctrine\Type\StudentIdType
+            student_email: App\Infrastructure\Persistence\Doctrine\Type\StudentEmailType
+            student_password: App\Infrastructure\Persistence\Doctrine\Type\StudentPasswordType
+    orm:
+        auto_generate_proxy_classes: true
+        naming_strategy: doctrine.orm.naming_strategy.underscore_number_aware
+        auto_mapping: true
+        mappings:
+            App:
+                is_bundle: false
+                type: xml
+                dir: '%kernel.project_dir%/src/Infrastructure/Persistence/Doctrine/Mapping'
+                prefix: 'App\Domain'
+                alias: App
