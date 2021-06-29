@@ -1,3 +1,8 @@
-#index:
-#    path: /
-#    controller: App\Controller\DefaultController::index
+login:
+  path: /login
+  methods: [ POST ]
+
+profile:
+  path: /profile
+  controller: App\Infrastructure\Controller\ProfileGetController
+  methods: [ GET ]
