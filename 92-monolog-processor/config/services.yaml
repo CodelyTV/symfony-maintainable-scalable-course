@@ -18,3 +18,7 @@ services:
         tags:
             - 'controller.service_arguments'
             # - { name: 'monolog.logger', channel: 'domain_events'}
+
+    App\Monolog\CorrelationIdProcessor:
+        tags:
+            - { name: monolog.processor }
