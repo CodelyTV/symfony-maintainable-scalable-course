@@ -1,3 +1,6 @@
-index:
+logs:
     path: /logs
     controller: App\Controller\LogController
+error:
+    path: /error
+    controller: App\Controller\ErrorController
