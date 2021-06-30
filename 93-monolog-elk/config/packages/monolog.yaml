@@ -1,0 +1,2 @@
+monolog:
+    channels: [ 'domain_event' ]
