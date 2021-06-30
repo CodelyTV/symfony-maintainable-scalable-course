@@ -1,0 +1,3 @@
+parameters:
+    codely_user: '%env(resolve:CODELY_USER)%'
+    codely_password: '%env(resolve:CODELY_PASSWORD)%'
