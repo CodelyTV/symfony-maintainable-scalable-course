@@ -22,3 +22,6 @@ services:
     App\Monolog\CorrelationIdProcessor:
         tags:
             - { name: monolog.processor }
+
+    Symfony\Bridge\Monolog\Handler\ElasticsearchLogstashHandler:
+        autowire: true

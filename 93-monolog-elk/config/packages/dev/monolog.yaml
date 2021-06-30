@@ -6,6 +6,11 @@ monolog:
             level: debug
             channels: ["!event"]
             formatter: monolog.formatter.json
+        elastic:
+            type: service
+            id: Symfony\Bridge\Monolog\Handler\ElasticsearchLogstashHandler
+            level: debug
+            channels: ["!event"]
         chromephp:
             type: chromephp
             channels: ["domain_event"]
