@@ -5,6 +5,7 @@ monolog:
             path: "%kernel.logs_dir%/%kernel.environment%.log"
             level: debug
             channels: ["!event"]
+            formatter: monolog.formatter.json
         chromephp:
             type: chromephp
             channels: ["domain_event"]
