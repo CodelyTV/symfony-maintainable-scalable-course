@@ -14,4 +14,14 @@ final class StudentId
     {
         return $this->studentId;
     }
+
+    public function __toString(): string
+    {
+        return $this->studentId;
+    }
+
+    public function equalTo(StudentId $other): bool
+    {
+        return $this->studentId === $other->studentId;
+    }
 }

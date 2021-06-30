@@ -34,4 +34,9 @@ final class InMemoryStudentRepository implements StudentRepository
 
         return $this->students[$email->value()];
     }
+
+    public function save(Student $student): void
+    {
+        $this->students[$student->email()->value()] = $student;
+    }
 }

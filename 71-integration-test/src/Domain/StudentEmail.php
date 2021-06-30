@@ -14,4 +14,14 @@ final class StudentEmail
     {
         return $this->studentEmail;
     }
+
+    public function __toString(): string
+    {
+        return $this->studentEmail;
+    }
+
+    public function equalTo(StudentEmail $other): bool
+    {
+        return $this->studentEmail === $other->studentEmail;
+    }
 }

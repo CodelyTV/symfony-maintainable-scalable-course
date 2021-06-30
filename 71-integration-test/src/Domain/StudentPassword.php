@@ -14,4 +14,14 @@ final class StudentPassword
     {
         return $this->studentPassword;
     }
+
+    public function __toString(): string
+    {
+        return $this->studentPassword;
+    }
+
+    public function equalTo(StudentPassword $other): bool
+    {
+        return $this->studentPassword === $other->studentPassword;
+    }
 }

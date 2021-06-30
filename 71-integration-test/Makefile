@@ -22,3 +22,7 @@ reset-db:
 	@docker-compose exec php bin/console doctrine:schema:drop --force
 	@docker-compose exec php bin/console doctrine:schema:update --force
 	@docker-compose exec php bin/console cache:clear
+
+.PHONY: tests
+tests: reset-db
+	@docker-compose exec php ./bin/phpunit

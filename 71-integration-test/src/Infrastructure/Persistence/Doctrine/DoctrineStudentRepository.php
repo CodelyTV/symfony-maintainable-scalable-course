@@ -27,4 +27,10 @@ final class DoctrineStudentRepository implements StudentRepository
     {
         return $this->repository->findOneBy(['email' => $email]);
     }
+
+    public function save(Student $student): void
+    {
+        $this->entityManager->persist($student);
+        $this->entityManager->flush($student);
+    }
 }
