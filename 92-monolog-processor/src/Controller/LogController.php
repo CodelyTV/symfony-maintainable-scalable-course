@@ -24,6 +24,6 @@ final class LogController
 
     protected function logUserDoesNotExist(int $userId): void
     {
-        $this->logger->error("User with id '$userId' does not exist");
+        $this->logger->error("User does not exist", ['user_id' => $userId]);
     }
 }
