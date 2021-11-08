@@ -5,6 +5,9 @@
     "egulias/email-validator": {
         "version": "3.1.2"
     },
+    "monolog/monolog": {
+        "version": "2.3.5"
+    },
     "psr/cache": {
         "version": "2.0.0"
     },
@@ -116,6 +119,24 @@
     },
     "symfony/mime": {
         "version": "v5.4.0-BETA1"
+    },
+    "symfony/monolog-bridge": {
+        "version": "v5.4.0-BETA1"
+    },
+    "symfony/monolog-bundle": {
+        "version": "3.7",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "master",
+            "version": "3.7",
+            "ref": "a7bace7dbc5a7ed5608dbe2165e0774c87175fe6"
+        },
+        "files": [
+            "config/packages/test/monolog.yaml",
+            "config/packages/prod/monolog.yaml",
+            "config/packages/prod/deprecations.yaml",
+            "config/packages/dev/monolog.yaml"
+        ]
     },
     "symfony/password-hasher": {
         "version": "v5.4.0-BETA1"

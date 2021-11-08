@@ -1,3 +1,7 @@
 send_email:
     path: /email-preview/send
     controller: App\EmailPreview\Controller\SendEmailController::send
+
+log:
+    path: /logger/log
+    controller: App\Logger\Controller\LogController::log

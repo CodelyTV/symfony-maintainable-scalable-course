@@ -16,3 +16,7 @@ services:
     App\EmailPreview\Controller\:
         resource: '../src/EmailPreview/Controller/'
         tags: ["controller.service_arguments" ]
+
+    App\Logger\Controller\:
+        resource: '../src/Logger/Controller/'
+        tags: ["controller.service_arguments" ]
