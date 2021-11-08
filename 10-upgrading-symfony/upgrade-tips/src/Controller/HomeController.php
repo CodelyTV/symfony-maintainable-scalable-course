@@ -9,6 +9,10 @@ use Symfony\Component\HttpFoundation\Response;
 
 final class HomeController
 {
+    public function __construct()
+    {
+    }
+
     public function __invoke(): Response
     {
         $deprecatedClass = new DeprecatedClass();
