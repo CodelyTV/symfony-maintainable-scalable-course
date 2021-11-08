@@ -24,3 +24,7 @@ services:
     App\RateLimiter\Controller\:
         resource: '../src/RateLimiter/Controller'
         tags: ["controller.service_arguments"]
+
+    App\Mercure\Controller\:
+        resource: '../src/Mercure/Controller'
+        tags: [ "controller.service_arguments" ]

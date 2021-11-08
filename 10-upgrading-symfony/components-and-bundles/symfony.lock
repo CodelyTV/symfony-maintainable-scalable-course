@@ -1,4 +1,10 @@
 {
+    "lcobucci/clock": {
+        "version": "2.1.0"
+    },
+    "lcobucci/jwt": {
+        "version": "4.1.5"
+    },
     "psr/cache": {
         "version": "2.0.0"
     },
@@ -7,6 +13,9 @@
     },
     "psr/event-dispatcher": {
         "version": "1.0.0"
+    },
+    "psr/link": {
+        "version": "1.1.1"
     },
     "psr/log": {
         "version": "2.0.0"
@@ -87,6 +96,9 @@
             "src/Controller/.gitignore"
         ]
     },
+    "symfony/http-client": {
+        "version": "v5.3.10"
+    },
     "symfony/http-client-contracts": {
         "version": "v2.4.0"
     },
@@ -108,6 +120,21 @@
             "config/packages/lock.yaml"
         ]
     },
+    "symfony/mercure": {
+        "version": "v0.6.0"
+    },
+    "symfony/mercure-bundle": {
+        "version": "0.3",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "master",
+            "version": "0.3",
+            "ref": "e0a854b5439186e04b28fb8887b42c54f24a0d32"
+        },
+        "files": [
+            "config/packages/mercure.yaml"
+        ]
+    },
     "symfony/options-resolver": {
         "version": "v5.3.7"
     },
@@ -127,6 +154,9 @@
         "version": "v1.23.1"
     },
     "symfony/polyfill-php81": {
+        "version": "v1.23.0"
+    },
+    "symfony/polyfill-uuid": {
         "version": "v1.23.0"
     },
     "symfony/rate-limiter": {
@@ -154,13 +184,44 @@
     "symfony/string": {
         "version": "v5.3.10"
     },
+    "symfony/translation-contracts": {
+        "version": "v2.4.0"
+    },
+    "symfony/twig-bridge": {
+        "version": "v5.3.7"
+    },
+    "symfony/twig-bundle": {
+        "version": "5.3",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "master",
+            "version": "5.3",
+            "ref": "3dd530739a4284e3272274c128dbb7a8140a66f1"
+        },
+        "files": [
+            "config/packages/twig.yaml",
+            "templates/base.html.twig"
+        ]
+    },
+    "symfony/uid": {
+        "version": "v5.3.10"
+    },
     "symfony/var-dumper": {
         "version": "v5.3.10"
     },
     "symfony/var-exporter": {
         "version": "v5.3.8"
     },
+    "symfony/web-link": {
+        "version": "v5.3.4"
+    },
     "symfony/yaml": {
         "version": "v5.3.6"
+    },
+    "twig/extra-bundle": {
+        "version": "v3.3.3"
+    },
+    "twig/twig": {
+        "version": "v3.3.3"
     }
 }

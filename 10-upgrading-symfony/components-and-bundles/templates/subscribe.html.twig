@@ -1,0 +1,10 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <script>
+        const eventSource = new EventSource("{{ mercure('https://example.com/courses/1')|escape('js') }}");
+        eventSource.onmessage = event => {
+            console.log(JSON.parse(event.data));
+        }
+    </script>
+{% endblock %}

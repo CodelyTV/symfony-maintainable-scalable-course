@@ -1,3 +1,12 @@
 index:
     path: /rate-limiter
     controller: App\RateLimiter\Controller\ApiController
+
+mercure_publish:
+    path: /mercure/publish
+    controller: App\Mercure\Controller\PublishController
+
+
+mercure_subscribe:
+    path: /mercure/subscribe
+    controller: App\Mercure\Controller\SubscribeController
