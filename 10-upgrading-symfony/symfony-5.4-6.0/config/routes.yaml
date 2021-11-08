@@ -5,3 +5,7 @@ send_email:
 log:
     path: /logger/log
     controller: App\Logger\Controller\LogController::log
+
+profiler_parameter:
+    path: /profiler-parameter
+    controller: App\ProfilerParameter\Controller\ProfilerParameterController::index

@@ -20,3 +20,7 @@ services:
     App\Logger\Controller\:
         resource: '../src/Logger/Controller/'
         tags: ["controller.service_arguments" ]
+
+    App\ProfilerParameter\Controller\:
+        resource: '../src/ProfilerParameter/Controller/'
+        tags: ["controller.service_arguments" ]

@@ -17,6 +17,10 @@ framework:
     php_errors:
         log: true
 
+    #profiler:
+    #    collect: false # Disable collection by default
+    #    collect_parameter: profile # Enable it if the parameter is set
+
 when@test:
     framework:
         test: true
