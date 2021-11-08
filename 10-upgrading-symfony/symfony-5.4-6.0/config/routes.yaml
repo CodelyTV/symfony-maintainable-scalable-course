@@ -9,3 +9,7 @@ log:
 profiler_parameter:
     path: /profiler-parameter
     controller: App\ProfilerParameter\Controller\ProfilerParameterController::index
+
+abstract_controller:
+    path: /abstract-controller
+    controller: App\AbstractController\Controller\HomeController
