@@ -17,6 +17,12 @@ framework:
     php_errors:
         log: true
 
+    rate_limiter:
+        anonymous_api:
+            policy: 'fixed_window'
+            limit: 3
+            interval: '1 minute'
+
 when@test:
     framework:
         test: true
