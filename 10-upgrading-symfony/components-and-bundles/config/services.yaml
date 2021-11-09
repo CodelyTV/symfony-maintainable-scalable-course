@@ -36,3 +36,7 @@ services:
     App\Notifier\Controller\:
         resource: '../src/Notifier/Controller'
         tags: [ "controller.service_arguments" ]
+
+    App\VarDumper\Controller\:
+        resource: '../src/VarDumper/Controller'
+        tags: [ "controller.service_arguments" ]

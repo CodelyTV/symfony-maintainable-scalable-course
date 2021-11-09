@@ -29,3 +29,7 @@ login_link_profile:
 notifier_send_notification:
     path: /notifier/send
     controller: App\Notifier\Controller\SendNotificationController
+
+var_dumper:
+    path: /var_dumper
+    controller: App\VarDumper\Controller\VarDumpController
