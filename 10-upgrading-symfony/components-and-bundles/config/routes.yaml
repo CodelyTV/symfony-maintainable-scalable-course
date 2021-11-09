@@ -6,7 +6,22 @@ mercure_publish:
     path: /mercure/publish
     controller: App\Mercure\Controller\PublishController
 
-
 mercure_subscribe:
     path: /mercure/subscribe
     controller: App\Mercure\Controller\SubscribeController
+
+login_check:
+    path: /login-check
+    controller: App\LoginLink\Controller\SecurityController::check
+
+login_link_logout:
+    path: /login-link/logout
+    controller: App\LoginLink\Controller\SecurityController::logout
+
+login_link_generate:
+    path: /login-link/login
+    controller: App\LoginLink\Controller\SecurityController::loginLink
+
+login_link_profile:
+    path: /login-link/profile
+    controller: App\LoginLink\Controller\ProfileController

@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <form action="{{ path('login_link_generate') }}" method="POST">
+        <label>Email
+            <input type="email" name="email" />
+            <input type="hidden" name="_target_path" value="{{ path('login_link_profile') }}" />
+        </label>
+        <button>Send Login Link</button>
+    </form>
+{% endblock %}

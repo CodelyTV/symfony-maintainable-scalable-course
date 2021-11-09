@@ -28,3 +28,7 @@ services:
     App\Mercure\Controller\:
         resource: '../src/Mercure/Controller'
         tags: [ "controller.service_arguments" ]
+
+    App\LoginLink\Controller\:
+        resource: '../src/LoginLink/Controller'
+        tags: [ "controller.service_arguments" ]
