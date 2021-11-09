@@ -32,3 +32,7 @@ services:
     App\LoginLink\Controller\:
         resource: '../src/LoginLink/Controller'
         tags: [ "controller.service_arguments" ]
+
+    App\Notifier\Controller\:
+        resource: '../src/Notifier/Controller'
+        tags: [ "controller.service_arguments" ]

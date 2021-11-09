@@ -14,6 +14,9 @@
     "lcobucci/jwt": {
         "version": "4.1.5"
     },
+    "lorenzo/pinky": {
+        "version": "1.0.5"
+    },
     "nikic/php-parser": {
         "version": "v4.13.1"
     },
@@ -52,6 +55,9 @@
         "files": [
             "bin/console"
         ]
+    },
+    "symfony/css-selector": {
+        "version": "v5.3.4"
     },
     "symfony/dependency-injection": {
         "version": "v5.3.10"
@@ -170,6 +176,18 @@
     },
     "symfony/mime": {
         "version": "v5.3.8"
+    },
+    "symfony/notifier": {
+        "version": "5.3",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "master",
+            "version": "5.0",
+            "ref": "c31585e252b32fe0e1f30b1f256af553f4a06eb9"
+        },
+        "files": [
+            "config/packages/notifier.yaml"
+        ]
     },
     "symfony/options-resolver": {
         "version": "v5.3.7"
@@ -307,7 +325,16 @@
     "symfony/yaml": {
         "version": "v5.3.6"
     },
+    "tijsverkoyen/css-to-inline-styles": {
+        "version": "2.2.3"
+    },
+    "twig/cssinliner-extra": {
+        "version": "v3.3.3"
+    },
     "twig/extra-bundle": {
+        "version": "v3.3.3"
+    },
+    "twig/inky-extra": {
         "version": "v3.3.3"
     },
     "twig/twig": {

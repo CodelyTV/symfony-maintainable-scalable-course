@@ -14,13 +14,16 @@
         "symfony/mailer": "5.3.*",
         "symfony/maker-bundle": "^1.34",
         "symfony/mercure-bundle": "^0.3.3",
+        "symfony/notifier": "5.3.*",
         "symfony/rate-limiter": "5.3.*",
         "symfony/runtime": "5.3.*",
         "symfony/security-bundle": "5.3.*",
         "symfony/twig-bundle": "5.3.*",
         "symfony/uid": "5.3.*",
         "symfony/yaml": "5.3.*",
+        "twig/cssinliner-extra": "^3.3",
         "twig/extra-bundle": "^2.12|^3.0",
+        "twig/inky-extra": "^3.3",
         "twig/twig": "^2.12|^3.0"
     },
     "config": {
