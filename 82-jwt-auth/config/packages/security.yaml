@@ -4,7 +4,7 @@ security:
     providers:
         jwt_user_provider:
             id: App\Infrastructure\Symfony\Security\JwtUserProvider
-    encoders:
+    password_hashers:
         App\Infrastructure\Symfony\Security\JwtUser:
             algorithm: auto
     firewalls:
