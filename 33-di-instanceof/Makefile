@@ -33,8 +33,8 @@ composer composer-install composer-update composer-require composer-require-modu
 
 .PHONY: reload
 reload: composer-env-file
-	@docker-compose exec php-fpm kill -USR2 1
-	@docker-compose exec nginx nginx -s reload
+	@docker compose exec php-fpm kill -USR2 1
+	@docker compose exec nginx nginx -s reload
 
 .PHONY: test
 test: composer-env-file
@@ -69,11 +69,11 @@ destroy: CMD=down
 # Usage: `make doco CMD="build --parallel --pull --force-rm --no-cache"`
 .PHONY: doco
 doco start stop destroy: composer-env-file
-	@docker-compose $(CMD)
+	@docker compose $(CMD)
 
 .PHONY: rebuild
 rebuild: composer-env-file
-	docker-compose build --pull --force-rm --no-cache
+	docker compose build --pull --force-rm --no-cache
 	make deps
 	make start
 

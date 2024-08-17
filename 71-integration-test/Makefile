@@ -1,14 +1,14 @@
 .PHONY: start
-start: composer .docker-compose-up
-	@docker-compose up -d
+start: composer .docker compose-up
+	@docker compose up -d
 
-.PHONY: .docker-compose-up
-.docker-compose-up:
-	@docker-compose up -d
+.PHONY: .docker compose-up
+.docker compose-up:
+	@docker compose up -d
 
 .PHONY: stop
 stop:
-	@docker-compose stop
+	@docker compose stop
 
 .PHONY: composer
 composer:
@@ -19,10 +19,10 @@ composer:
 
 .PHONY: reset-db
 reset-db:
-	@docker-compose exec php bin/console doctrine:schema:drop --force
-	@docker-compose exec php bin/console doctrine:schema:update --force
-	@docker-compose exec php bin/console cache:clear
+	@docker compose exec php bin/console doctrine:schema:drop --force
+	@docker compose exec php bin/console doctrine:schema:update --force
+	@docker compose exec php bin/console cache:clear
 
 .PHONY: tests
 tests: reset-db
-	@docker-compose exec php ./bin/phpunit
+	@docker compose exec php ./bin/phpunit
